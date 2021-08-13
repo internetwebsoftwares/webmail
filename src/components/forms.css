@@ -38,7 +38,7 @@ form a {
   color: grey;
   z-index: 2;
   left: 0.5rem;
-  top: 0.6rem;
+  top: 0.65rem;
   transition: color 0.3s ease, top 0.3s ease, font-size 0.3s ease,
     font-weight 0.3s ease;
   background-color: #fff;
