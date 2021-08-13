@@ -93,13 +93,15 @@ function OneMessage() {
         <br />
         <p>{message.message}</p>
         <br />
-        <Link
-          onClick={setReplyingTo(message.from)}
-          to="/email/new"
-          className="refreshBtn"
-        >
-          <i className="fas fa-reply"></i> Reply
-        </Link>
+        {message.from !== mainUser.email && (
+          <Link
+            onClick={setReplyingTo(message.from)}
+            to="/email/new"
+            className="refreshBtn"
+          >
+            <i className="fas fa-reply"></i> Reply
+          </Link>
+        )}
       </div>
     </div>
   );
