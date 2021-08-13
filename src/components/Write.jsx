@@ -13,9 +13,9 @@ const styles = {
 };
 
 function Write(props) {
-  const { mainUser, userToken, setAlertMessage, setIsAlertOpen } =
+  const { mainUser, userToken, setAlertMessage, setIsAlertOpen, replyingTo } =
     useContext(MainContext);
-  const [to, setTo] = useState("");
+  const [to, setTo] = useState(replyingTo);
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
   const [isSending, setIsSending] = useState(false);
@@ -70,7 +70,7 @@ function Write(props) {
           <label>Enter receiver's email address here</label>
           <datalist id="emails">
             {mainUser.clientEmailIds.map((email) => {
-              return <option value={email}></option>;
+              return <option key={email} value={email}></option>;
             })}
           </datalist>
         </div>

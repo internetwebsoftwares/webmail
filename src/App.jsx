@@ -38,6 +38,8 @@ function App() {
   const [alertMessage, setAlertMessage] = useState("");
   const [isSearchBarVisible, setSearchBarVisible] = useState(false);
 
+  const [replyingTo, setReplyingTo] = useState("");
+
   function searchEmails(e) {
     setSearchText(e.target.value);
   }
@@ -66,6 +68,8 @@ function App() {
         setIsAlertOpen,
         isSearchBarVisible,
         setSearchBarVisible,
+        replyingTo,
+        setReplyingTo,
       }}
     >
       <BrowserRouter>

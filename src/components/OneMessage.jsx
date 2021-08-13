@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import MainContext from "../MainContext";
 import Loading from "./Loading";
 
@@ -32,7 +33,7 @@ const styles = {
 
 function OneMessage() {
   const [message, setMessage] = useState({});
-  const { userToken, mainUser } = useContext(MainContext);
+  const { userToken, mainUser, setReplyingTo } = useContext(MainContext);
   const id = window.location.pathname.split("/")[2];
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
@@ -91,6 +92,14 @@ function OneMessage() {
       <div className="body">
         <br />
         <p>{message.message}</p>
+        <br />
+        <Link
+          onClick={setReplyingTo(message.from)}
+          to="/email/new"
+          className="refreshBtn"
+        >
+          <i className="fas fa-reply"></i> Reply
+        </Link>
       </div>
     </div>
   );
