@@ -1,0 +1,50 @@
+.appMessage .avatar {
+  background-color: #3f51b5;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.appMessage {
+  background-color: #f2f2f2;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.appMessage:hover {
+  background-color: #e6e6e6;
+}
+
+.appMessage:nth-of-type(1) {
+  border-radius: 15px 15px 0 0;
+}
+
+.appMessage:last-of-type {
+  border-radius: 0 0 15px 15px;
+  border-bottom: none;
+}
+
+.appMessage .info {
+  margin-left: 1rem;
+  width: 100%;
+}
+
+.appMessage .info .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 550px) {
+  .appMessage .info .header {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 0.5rem;
+  }
+}

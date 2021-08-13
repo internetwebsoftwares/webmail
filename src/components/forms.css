@@ -1,0 +1,131 @@
+:root {
+  /* --primary-color: #3f51b5; */
+  --light-color: #f1f3fc;
+}
+
+form {
+  margin: 1.5rem 0;
+}
+
+form a {
+  color: var(--primary-color);
+}
+
+.appInput {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.appInput input,
+.appInput textarea {
+  padding: 0 0.5rem;
+  border: none;
+  border: 2px solid #ccc;
+  background-color: #fff;
+  border-radius: 5px;
+  outline: none;
+  height: 50px;
+  width: 100%;
+  font-size: 1rem;
+  position: relative;
+}
+
+.appInput label {
+  position: absolute;
+  pointer-events: none;
+  color: grey;
+  z-index: 2;
+  left: 0.5rem;
+  top: 0.6rem;
+  transition: color 0.3s ease, top 0.3s ease, font-size 0.3s ease,
+    font-weight 0.3s ease;
+  background-color: #fff;
+  padding: 0 0.4rem;
+}
+
+.appInput input:focus,
+.appInput textarea:focus {
+  border: 3px solid var(--primary-color);
+}
+
+.appInput input:focus ~ label,
+.appInput textarea:focus ~ label,
+.appInput input:not(:placeholder-shown) ~ label,
+.appInput textarea:not(:placeholder-shown) ~ label {
+  color: var(--primary-color);
+  top: -10px;
+  font-weight: bold;
+  font-size: 0.75rem;
+}
+
+.appInput textarea {
+  resize: none;
+  height: 160px;
+  padding: 0.5rem;
+}
+
+.appBtn {
+  padding: 0.5rem 0.8rem;
+  border: none;
+  letter-spacing: 1px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 0.4rem;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
+}
+
+.appBtn:hover {
+  background-color: #ccc;
+}
+
+.appBtn-block {
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.8rem;
+}
+
+.appBtn-primary {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.appBtn-primary:hover {
+  background-color: #3746a0;
+  color: #fff;
+}
+
+.appBtn-danger {
+  background-color: #e53935;
+  color: #fff;
+}
+
+.appBtn-danger:hover {
+  background-color: #c5302d;
+  color: #fff;
+}
+
+.refreshBtn {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border: none;
+  color: var(--primary-color);
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  background-color: #fff;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.refreshBtn i {
+  margin-right: 0.5rem;
+}
+
+.refreshBtn:hover {
+  background-color: #f2f2f2;
+}

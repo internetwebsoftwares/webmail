@@ -1,0 +1,121 @@
+:root {
+  --primary-color: #3f51b5;
+  --secondary-color: #e2e6ff;
+}
+
+.appLoadingCircle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 6px solid var(--secondary-color);
+  border-top: 6px solid var(--primary-color);
+  animation: spin 0.6s linear infinite;
+  margin: 2rem 0;
+}
+
+.appList {
+  list-style-type: none;
+}
+
+.appList li {
+  border: 1px solid #e6e6e6;
+  padding: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.appList i {
+  margin: 0.4rem;
+}
+
+.appList i.fa-chevron-right {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.appList li:hover {
+  background-color: #f2f2f2;
+}
+
+.hide {
+  display: none;
+}
+
+.appAlert {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 200;
+  background-color: #f2f2f2;
+  width: 100%;
+  max-width: 300px;
+  border-radius: 18px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.25);
+}
+
+.appAlert h2 {
+  margin-bottom: 0.5rem;
+}
+
+.appAlert .info {
+  padding: 1rem;
+}
+
+.appAlert strong {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.appAlert .footer {
+  margin-top: 0.5rem;
+}
+
+.appAlert .confirm-footer {
+  display: flex;
+}
+
+.appAlert .confirm-footer button {
+  border-right: 1px solid #ccc;
+}
+
+.appAlert button {
+  color: var(--primary-color);
+  border: none;
+  padding: 0.8rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  width: 100%;
+  background-color: #f2f2f2;
+  border-top: 1px solid #ccc;
+  font-family: "Poppins", sans-serif;
+}
+
+.appAlert button:hover {
+  background-color: #e6e6e6;
+}
+
+.appAlert-backdrop {
+  cursor: pointer;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 200;
+  backdrop-filter: blur(10px);
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

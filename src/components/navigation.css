@@ -1,0 +1,45 @@
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+.appNavigationTab {
+  width: max-content;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+.appNavigationTab .tab {
+  background-color: #e6e6e6;
+  padding: 0.4rem 0.6rem;
+}
+
+.appNavigationTab .tab:hover {
+  background-color: #ccc;
+}
+
+.appNavigationTab .tab.active {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.appNavigationTab .tab:first-child {
+  border-radius: 5px 0 0 5px;
+  border-right: 1px solid #ccc;
+}
+
+.appNavigationTab .tab:last-child {
+  border-radius: 0px 5px 5px 0px;
+  border-right: none;
+}
+
+.appNavigationTab i {
+  margin-right: 0.5rem;
+}
+
+@media screen and (max-width: 370px) {
+  .appNavigationTab .tab {
+    padding: 0.4rem 0.5rem;
+    font-size: 0.9rem;
+  }
+}
