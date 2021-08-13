@@ -82,7 +82,7 @@ function App() {
             <Login />
           </Route>
           <Route path="/" exact>
-            <Inbox />
+            <Redirect to="/inbox" />
           </Route>
           <ProtectedRoute path="/inbox" exact>
             <Inbox />
