@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import MainContext from "../MainContext";
 import "./forms.css";
@@ -12,13 +12,23 @@ const styles = {
   },
 };
 
-function Write(props) {
-  const { mainUser, userToken, setAlertMessage, setIsAlertOpen, replyingTo } =
-    useContext(MainContext);
+function Write() {
+  const {
+    mainUser,
+    userToken,
+    setAlertMessage,
+    setIsAlertOpen,
+    replyingTo,
+    setReplyingTo,
+  } = useContext(MainContext);
   const [to, setTo] = useState(replyingTo);
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
   const [isSending, setIsSending] = useState(false);
+
+  useEffect(() => {
+    return () => setReplyingTo("");
+  }, []);
 
   async function handleSubmit(e) {
     e.preventDefault();
