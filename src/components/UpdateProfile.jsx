@@ -61,6 +61,7 @@ function UpdateProfile() {
       <form onSubmit={handleSubmit}>
         <div className="appInput">
           <input
+            autoFocus
             required
             value={firstName}
             onChange={(e) => setFirstName(e.target.value)}

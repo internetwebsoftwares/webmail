@@ -69,6 +69,7 @@ function Write() {
       <form onSubmit={handleSubmit}>
         <div className="appInput">
           <input
+            autoFocus
             value={to}
             onChange={(e) => setTo(e.target.value)}
             placeholder=" "

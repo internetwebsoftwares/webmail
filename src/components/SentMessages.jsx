@@ -4,6 +4,7 @@ import axios from "axios";
 import MainContext from "../MainContext";
 import { Link } from "react-router-dom";
 import Loading from "./Loading";
+import Message from "./Message";
 
 const styles = {
   container: {
@@ -42,7 +43,7 @@ function SentMessages() {
   useEffect(() => {
     let messages = Array.from(document.querySelectorAll(".sentMessages"));
     messages.forEach((message) => {
-      if (message.innerHTML.toLowerCase().includes(searchText.toLowerCase())) {
+      if (message.innerText.toLowerCase().includes(searchText.toLowerCase())) {
         message.classList.remove("hide");
       } else {
         message.classList.add("hide");
@@ -74,26 +75,11 @@ function SentMessages() {
           }
         );
         return (
-          <Link
-            to={`/message/${message._id}`}
-            key={message._id}
-            className="appMessage sentMessages"
-          >
-            <div className="avatar">{avatarTextFormatted}</div>
-            <div className="info">
-              <div className="header">
-                <div style={{ display: "flex", alignItems: "center" }}>
-                  <h3>{message.to}</h3>
-                </div>
-                <small style={{ fontSize: ".75rem" }}>{dateFormatted}</small>
-              </div>
-              <p>
-                {message.message.length < 120
-                  ? message.message
-                  : `${message.message.slice(0, 120)}...`}
-              </p>
-            </div>
-          </Link>
+          <Message
+            message={message}
+            avatarTextFormatted={avatarTextFormatted}
+            dateFormatted={dateFormatted}
+          />
         );
       })}
     </div>

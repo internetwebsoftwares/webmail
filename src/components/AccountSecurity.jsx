@@ -119,6 +119,7 @@ function AccountSecurity(props) {
       <form onSubmit={handleSubmit}>
         <div className="appInput">
           <input
+            autoFocus
             required
             value={currPass}
             onChange={(e) => setCurrPass(e.target.value)}

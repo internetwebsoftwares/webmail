@@ -66,6 +66,7 @@ function Login(props) {
       <form onSubmit={handleSubmit}>
         <div className="appInput">
           <input
+            autoFocus
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             type="email"

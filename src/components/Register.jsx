@@ -70,6 +70,7 @@ function Register(props) {
       <form onSubmit={handleSubmit}>
         <div className="appInput">
           <input
+            autoFocus
             placeholder=" "
             value={firstName}
             onChange={(e) => setFirstName(e.target.value)}

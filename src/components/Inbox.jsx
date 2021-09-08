@@ -5,6 +5,7 @@ import axios from "axios";
 import MainContext from "../MainContext";
 import { Link } from "react-router-dom";
 import Loading from "./Loading";
+import Message from "./Message";
 
 const styles = {
   container: {
@@ -92,35 +93,11 @@ function Inbox() {
           }
         );
         return (
-          <Link
-            to={`/message/${message._id}`}
-            key={message._id}
-            className="appMessage inboxMessages"
-          >
-            <div className="avatar">{avatarTextFormatted}</div>
-            <div className="info">
-              <div className="header">
-                <div style={{ display: "flex", alignItems: "center" }}>
-                  <h3>{message.senderName}</h3>
-                  <small>
-                    <strong>{!message.read ? "(Unread)" : ""}</strong>
-                  </small>
-                </div>
-                <small style={{ fontSize: ".75rem" }}>{dateFormatted}</small>
-              </div>
-              <p>
-                {message.subject ? (
-                  message.subject
-                ) : (
-                  <>
-                    {message.message.length < 120
-                      ? message.message
-                      : `${message.message.slice(0, 120)}...`}
-                  </>
-                )}
-              </p>
-            </div>
-          </Link>
+          <Message
+            message={message}
+            avatarTextFormatted={avatarTextFormatted}
+            dateFormatted={dateFormatted}
+          />
         );
       })}
     </div>
