@@ -104,7 +104,7 @@ function Write() {
             rows={4}
             placeholder=" "
           ></textarea>
-          <label>Message</label>
+          <label>Your Message</label>
         </div>
 
         <button

@@ -97,6 +97,7 @@ function Inbox() {
             message={message}
             avatarTextFormatted={avatarTextFormatted}
             dateFormatted={dateFormatted}
+            usedIn="inbox"
           />
         );
       })}

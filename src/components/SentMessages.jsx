@@ -79,6 +79,7 @@ function SentMessages() {
             message={message}
             avatarTextFormatted={avatarTextFormatted}
             dateFormatted={dateFormatted}
+            usedIn="outbox"
           />
         );
       })}

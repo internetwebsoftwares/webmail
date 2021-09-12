@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Message({ message, avatarTextFormatted, dateFormatted }) {
+function Message({ message, avatarTextFormatted, dateFormatted, usedIn }) {
   return (
     <Link
       to={`/message/${message._id}`}
@@ -12,9 +12,13 @@ function Message({ message, avatarTextFormatted, dateFormatted }) {
       <div className="info">
         <div className="header">
           <div style={{ display: "flex", alignItems: "center" }}>
-            <h3>{message.senderName}</h3>
+            <h3>
+              {usedIn === "inbox" ? message.senderName : message.receiverName}
+            </h3>
             <small>
-              <strong>{!message.read ? "(Unread)" : ""}</strong>
+              <strong>
+                {!message.read && usedIn === "inbox" ? "(Unread)" : ""}
+              </strong>
             </small>
           </div>
           <small style={{ fontSize: ".75rem" }}>{dateFormatted}</small>
