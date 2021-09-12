@@ -6,7 +6,7 @@ function Message({ message, avatarTextFormatted, dateFormatted }) {
     <Link
       to={`/message/${message._id}`}
       key={message._id}
-      className="appMessage inboxMessages"
+      className="appMessage"
     >
       <div className="avatar">{avatarTextFormatted}</div>
       <div className="info">
