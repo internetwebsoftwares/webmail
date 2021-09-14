@@ -29,6 +29,9 @@ const styles = {
   bodyHeader: {
     color: "#333",
   },
+  link: {
+    color: "#3f51b5",
+  },
 };
 
 function OneMessage() {
@@ -76,14 +79,34 @@ function OneMessage() {
             <small>
               From:{" "}
               <strong>
-                {message.from === mainUser.email ? "Me" : message.from}
+                {message.from === mainUser.email ? (
+                  "Me"
+                ) : (
+                  <Link
+                    style={styles.link}
+                    onClick={setReplyingTo(message.from)}
+                    to="/email/new"
+                  >
+                    {message.from}
+                  </Link>
+                )}
               </strong>
             </small>
             {", "}
             <small>
               to:{" "}
               <strong>
-                {message.to === mainUser.email ? "Me" : message.to}
+                {message.to === mainUser.email ? (
+                  "Me"
+                ) : (
+                  <Link
+                    style={styles.link}
+                    onClick={setReplyingTo(message.to)}
+                    to="/email/new"
+                  >
+                    {message.to}
+                  </Link>
+                )}
               </strong>
             </small>
           </div>
