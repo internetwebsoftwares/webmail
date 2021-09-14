@@ -10,7 +10,7 @@ import Loading from "./Loading";
 const styles = {
   container: {
     width: "100%",
-    maxWidth: "400px",
+    maxWidth: "600px",
     margin: "2rem auto",
     padding: "1rem",
   },

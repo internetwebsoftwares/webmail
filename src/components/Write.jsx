@@ -6,7 +6,7 @@ import "./forms.css";
 const styles = {
   container: {
     width: "100%",
-    maxWidth: "500px",
+    maxWidth: "600px",
     margin: "1rem auto",
     padding: "1rem",
   },
@@ -112,7 +112,7 @@ function Write() {
           className="appBtn appBtn-primary appBtn-block"
           type="submit"
         >
-          {isSending ? "Sending..." : "Send"}
+          {isSending ? "Sending..." : "Send message"}
         </button>
       </form>
       <br />
