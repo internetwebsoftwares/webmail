@@ -61,6 +61,10 @@ form a {
   font-size: 0.75rem;
 }
 
+.appInput textarea ~ label {
+  top: 24px;
+}
+
 .appInput textarea {
   resize: none;
   height: 160px;

@@ -3,7 +3,6 @@ import "./inbox.css";
 import "./app.css";
 import axios from "axios";
 import MainContext from "../MainContext";
-import { Link } from "react-router-dom";
 import Loading from "./Loading";
 import Message from "./Message";
 
@@ -17,8 +16,7 @@ const styles = {
 };
 
 function Inbox() {
-  const { userToken, searchText, setSearchBarVisible } =
-    useContext(MainContext);
+  const { userToken, setSearchBarVisible } = useContext(MainContext);
   const [messages, setMessages] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -42,17 +40,6 @@ function Inbox() {
     fetchInboxMsg();
     return () => setSearchBarVisible(false);
   }, []);
-
-  useEffect(() => {
-    let messages = Array.from(document.querySelectorAll(".inboxMessages"));
-    messages.forEach((message) => {
-      if (message.innerHTML.toLowerCase().includes(searchText.toLowerCase())) {
-        message.classList.remove("hide");
-      } else {
-        message.classList.add("hide");
-      }
-    });
-  }, [searchText]);
 
   if (isLoading) {
     return <Loading />;

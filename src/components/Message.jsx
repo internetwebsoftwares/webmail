@@ -1,7 +1,20 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
+import MainContext from "../MainContext";
 
 function Message({ message, avatarTextFormatted, dateFormatted, usedIn }) {
+  const { searchText } = useContext(MainContext);
+
+  useEffect(() => {
+    let messages = Array.from(document.querySelectorAll(".appMessage"));
+    messages.forEach((message) => {
+      if (message.innerHTML.toLowerCase().includes(searchText.toLowerCase())) {
+        message.classList.remove("hide");
+      } else {
+        message.classList.add("hide");
+      }
+    });
+  }, [searchText]);
   return (
     <Link
       to={`/message/${message._id}`}
