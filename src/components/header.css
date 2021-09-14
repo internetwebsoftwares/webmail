@@ -22,6 +22,10 @@
   color: #fff;
 }
 
+.appHeader h2 span {
+  font-family: "Cabin", sans-serif;
+}
+
 .appHeader .left {
   display: flex;
   align-items: center;

@@ -13,7 +13,9 @@ function Header() {
     <header className="appHeader">
       <div className="left">
         <Link to="/">
-          <h2>webMa!l</h2>
+          <h2>
+            webM<span>@</span>!l
+          </h2>
         </Link>
       </div>
       {isUserLoggedIn && isSearchBarVisible && (
